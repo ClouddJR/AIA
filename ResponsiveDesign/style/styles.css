@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: black;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font: 16px Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+header {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+}
+header img {
+  width: 75px;
+  height: 75px;
+}
+header h1 {
+  margin-left: 15px;
+  font-size: 32px;
+}
+header nav {
+  flex-grow: 2;
+  display: flex;
+  align-self: flex-start;
+  justify-content: flex-end;
+}
+header nav a {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  width: 75px;
+}
+header #icon-wrapper {
+  display: none;
+  border: 2px black solid;
+  border-radius: 15px;
+  padding: 6px;
+  background-color: beige;
+}
+header .icon-line {
+  width: 25px;
+  height: 2px;
+  background-color: black;
+  margin: 7px 5px;
+}
+
+main {
+  display: flex;
+  padding: 15px;
+}
+main article {
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  border: 2px black solid;
+}
+main article .article-title {
+  border-bottom: 2px black solid;
+  border-left: 2px black solid;
+  height: 50px;
+  width: 50%;
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+main article .article-content {
+  text-align: justify;
+  padding: 30px;
+}
+main article #first-title {
+  background-color: turquoise;
+}
+main article #second-title {
+  background-color: orange;
+}
+main article #third-title {
+  background-color: pink;
+}
+
+footer {
+  background-color: beige;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-top: 2px black solid;
+  border-bottom: 2px black solid;
+}
+footer strong {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 1023px) {
+  header nav a {
+    display: none;
+  }
+  header nav #icon-wrapper {
+    display: block;
+  }
+
+  main {
+    flex-wrap: wrap;
+  }
+  main article {
+    flex: 1 0 40%;
+  }
+  main article .article-title {
+    width: 200px;
+  }
+  main #first-article {
+    flex: 0 1 100%;
+  }
+}
+@media only screen and (max-width: 599px) {
+  header {
+    padding-bottom: 0px;
+  }
+  header h1 {
+    display: none;
+  }
+
+  main {
+    flex-wrap: wrap;
+  }
+  main article {
+    flex: 0 1 100%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
