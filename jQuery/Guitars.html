@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $.getJSON("guitars.json", function (data) {
+                var guitars = [];
+                $.each(data.Guitars.Guitar, function (key, val) {
+                    guitars.push("<li id='" + key + "'> <b>Brand:</b> " + val.Brand + ", <b>Model:</b> " + val.Model + "</li>");
+                });
+
+                $("<ul/>", {
+                    "class": "guitars-list",
+                    html: guitars.join("")
+                }).appendTo("body");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="content"></div>
+</body>
+
+</html>

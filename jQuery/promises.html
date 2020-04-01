@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        function get(url) {
+            return new Promise(function (resolve, reject) {
+                var req = new XMLHttpRequest();
+                req.open('GET', url);
+
+                req.onload = function () {
+                    if (req.status == 200) {
+                        resolve(req.response);
+                    }
+                    else {
+                        reject(Error(req.statusText));
+                    }
+                };
+
+                req.onerror = function () {
+                    reject(Error("Network Error"));
+                };
+
+                req.send();
+            });
+        }
+
+        get('guitars.json').then(function (response) {
+            $("#content").html(response)
+        }, function (error) {
+            
+        })
+
+
+    </script>
+</head>
+
+<body>
+    <div id="content"></div>
+</body>
+
+</html>
