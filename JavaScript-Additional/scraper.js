@@ -2,7 +2,7 @@ const request = require('request');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
-const base_url = 'https://singlemalt.pl/prezenty-i-upominki'
+const base_url = 'https://singlemalt.pl/prezenty-i-upominki?limit=80'
 
 request(base_url, function (error, response, body) {
     getListOfProducts(body)
@@ -17,8 +17,11 @@ function getListOfProducts(body) {
     var promises = []
     whiskyList.forEach((whisky) => {
         var productLink = whisky.querySelector("h2.product-name a").href;
-        var price = whisky.querySelector("div.details-section-bottom span.price").textContent.trim().slice(0, -3).replace(",", ".");
-        promises.push(getWhiskyProductFromLink(productLink, price))
+        var priceSpan = whisky.querySelector("div.details-section-bottom span.price")
+        if (priceSpan) {
+            var price = priceSpan.textContent.trim().slice(0, -3).replace(",", ".");
+            promises.push(getWhiskyProductFromLink(productLink, price))
+        }
     })
 
     Promise.all(promises).then(function (values) {
