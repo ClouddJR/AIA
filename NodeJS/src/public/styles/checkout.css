@@ -1,0 +1,114 @@
+#content {
+    align-self: center;
+    width: 100%;
+    max-width: 768px;
+}
+
+header {
+    width: 100%;
+    color: white;
+    padding: 20px;
+    background-color: #1f4068;
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1 {
+    margin-left: 20px;
+}
+
+header nav {
+    margin-right: 20px;
+    align-self: center;
+}
+
+header nav a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+
+main h1 {
+    margin-top: 20px;
+    color: white;
+}
+
+#message-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 70%;
+    background-color: #eef9bf;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15), 0 4px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+#message-container p {
+    font-size: 22px;
+}
+
+#message-container #button-ok {
+    padding: 5px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: white;
+}
+
+#message-container #button-ok:hover {
+    background-color: gray;
+    color: white;
+}
+
+#table-items {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #eef9bf;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.25), 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+tr th {
+    padding: 8px 16px;
+    font-size: 18px;
+}
+
+tr td {
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+#table-items tr:last-child td{
+    padding-top: 40px;
+}
+
+.btn {
+    padding: 5px 8px;
+    border-radius: 7px;
+    text-align: center;
+    color: white;
+    background-color: #6a8caf;
+    font-size: 15px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: white;
+    background-color: gray;
+}
+
+#btn-remove-all-items {
+    background-color: red;
+}
+
+#btn-purchase-all-items {
+    background-color: #75b79e;
+}

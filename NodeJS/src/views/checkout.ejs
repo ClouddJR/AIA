@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout</title>
+
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="stylesheet" type="text/css" href="styles/checkout.css">
+</head>
+
+<% var itemsInCart = items_cart; %>
+
+<body>
+
+  <header>
+    <h1>Checkout</h1>
+    <nav>
+      <a href="/">Go back to the main page</a>
+    </nav>
+  </header>
+
+  <div id="content">
+
+    <main>
+      <h1>Items in your cart</h1>
+      <% if(message) { %>
+      <div id="message-container">
+        <p><%= message %></p>
+        <div id="button-ok">OK</div>
+      </div>
+      <% } %>
+      <table id="table-items">
+        <tr>
+          <th>Item name</th>
+          <th>Options</th>
+        </tr>
+        <% for (var i = 0; i < itemsInCart.length; i++) { %>
+        <tr>
+          <td><%= itemsInCart[i].name %></td>
+          <td>
+            <div class="btn btn-remove-item">Remove</div>
+          </td>
+        </tr>
+        <% } %>
+        <% if(itemsInCart.length > 0) { %>
+        <tr>
+          <td>
+            <div class="btn" id="btn-remove-all-items">Remove all items</div>
+          </td>
+          <td>
+            <div class="btn" id="btn-purchase-all-items">Purchase all items</div>
+          </td>
+        </tr>
+        <% } %>
+      </table>
+    </main>
+
+  </div>
+
+  <script type="text/javascript">
+    var itemsInCart = JSON.parse('<%-JSON.stringify(itemsInCart)%>');
+  </script>
+  <script type="text/javascript" src="/scripts/checkout.js"></script>
+</body>
+
+</html>
