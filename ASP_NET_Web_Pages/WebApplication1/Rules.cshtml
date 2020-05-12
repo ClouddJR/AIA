@@ -1,0 +1,33 @@
+﻿@{ 
+    var rules = Session["rules"] as List<string>;
+    if(rules == null)
+    {
+        rules = new List<string>();
+        Session["rules"] = rules;
+    }
+    if (!Request["rule"].IsEmpty())
+    {
+        rules.Add(Request["rule"]);
+        Response.Redirect("Rules.cshtml");
+    }
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Fight club rules</h1>
+    <ul>
+        @foreach(var rule in rules)
+        {
+            <li>@rule</li>
+        }
+    </ul>
+    <form action="~/Rules.cshtml" method="post">
+        <label for="name">Rule:</label>
+        <input type="text" id="rule" name="rule">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
