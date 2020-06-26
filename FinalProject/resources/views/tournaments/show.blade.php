@@ -147,6 +147,6 @@
         }
     </script>
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyY66YvoIgFjKWsAzIepBRk9A0M0dfA9I&callback=initMap">
+            src="GOOGLE_MAPS_URL_WITH_KEY">
     </script>
 </x-app>
